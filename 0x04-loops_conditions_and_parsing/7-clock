@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script displays the time.
+
+hour=0
+minute=0
+
+while [[ hour -le 12 ]] && [[ minute -lt 59 ]]; do
+    if [[ minute -eq 0 ]]; then
+	echo "Hour: $hour"
+	((hour++))
+    fi
+    ((minute++))
+    echo $minute
+    if [[ minute -eq 59 ]]; then
+	minute=0
+    fi
+done
