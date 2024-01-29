@@ -3,17 +3,10 @@
 
 counter=0
 
-while [[ counter -le 7 ]]; do
+while [[ counter -le 9 ]]; do
       echo "Best School"
       ((counter++))
-      if [[ counter -eq 8 ]]; then
+      if [[ counter -eq 9 ]]; then
 	  echo "Hi"
       fi
-done
-
-counter=9
-
-while [[ counter -le 9 ]]; do
-    echo "Best School"
-    ((counter++))
 done
