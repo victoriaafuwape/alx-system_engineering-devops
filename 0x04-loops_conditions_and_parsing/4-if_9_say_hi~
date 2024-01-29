@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" and "Hi"
+
+counter=0
+
+while [[ counter -le 9 ]]; do
+      echo "Best School"
+      ((counter++))
+      if [[ counter -eq 8 ]]; then
+      	  echo "Hi"
+      fi
+done
