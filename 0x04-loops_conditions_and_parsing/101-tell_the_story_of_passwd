@@ -9,10 +9,10 @@ exec 3<"$file"
 
 # use a loop to read the file
 # while the file is open, read each line
-while IFS=: read -r username password userid groupid _ homedir shell
+while IFS=: read -r username password userid groupid comment homedir shell
 do
     # display the required information
-    echo "The user $username is part of the $groupid gang, lives in $homedir, and rides $shell. $userid's place is protected by the passcode $password, more info about the user here: $username"
+    echo "The user $username is part of the $groupid gang, lives in $homedir, and rides $shell. $userid's place is protected by the passcode $password, more info about the user here: $comment"
 done <&3
 
 # close the file
