@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script displays the content of a file /etc/passwd.
+# This script displays the content of a file /etc/passwd and tells a story.
 
 # assign the file name to a variable
 file="/etc/passwd"
