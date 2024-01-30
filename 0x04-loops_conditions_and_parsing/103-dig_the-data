@@ -15,7 +15,7 @@ else
     exec 3<"$file"
 
     # extract and display IP and HTTP status code
-    awk '{print $1, $9}' "$file" | sort | uniq -c | sort -nr
+    awk '{ print $1,$9 }' apache-access.log | sort | uniq -c | sort -nr
 
     # close the file
     exec 3<&-
