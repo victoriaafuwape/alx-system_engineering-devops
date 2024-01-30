@@ -15,13 +15,8 @@ else
     exec 3<"$file"
 
     # extract and display IP and HTTP status code
-    if awk 'NF >= 10 {print $1, $9}' "$file" | grep -q '.'
-    then
-        awk '{ print $1, $9 }' "$file" | sort | uniq -c | sort -nr
-    else
-        exit 1
-    fi
-    
+    awk -F' ' '{ print $1, $9 }' "$file" | sort | uniq -c | sort -nr
+
     # close the file
     exec 3<&-
 fi
