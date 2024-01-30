@@ -1,4 +1,27 @@
 #!/usr/bin/env bash
 # This script displays the IP and HTTP status code of an Apache log file.
 
-awk '{ print $1,$9 }' apache-access.log | sort | uniq -c | sort -nr
+# assign the file name to a variable
+file="apache-access.log"
+
+# check if file exists
+# if file does not exist, exit
+if [ ! -f "$file" ]
+then
+    echo "Error: $file not found."
+    exit 1
+else
+    # if file exists, open
+    exec 3<"$file"
+
+    # extract and display IP and HTTP status code
+    if awk 'NF >= 10 {print $1, $9}' "$file" | grep -q '.'
+    then
+        awk '{ print $1, $9 }' "$file" | sort | uniq -c | sort -nr
+    else
+        exit 1
+    fi
+    
+    # close the file
+    exec 3<&-
+fi
