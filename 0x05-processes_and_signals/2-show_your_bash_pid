@@ -1,0 +1,6 @@
+!/bin/bash
+# Display PID of Bash process
+# shellcheck disable=SC2009
+
+echo "$$"
+ps -aux | grep bash
