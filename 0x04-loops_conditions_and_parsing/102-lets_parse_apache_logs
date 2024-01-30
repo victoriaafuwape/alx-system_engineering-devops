@@ -15,7 +15,7 @@ else
     exec 3<"$file"
 
     # extract and display IP and HTTP status code
-    awk '{print $1, $9}' "$file"
+    awk '{ print $1, $9 }' "$file"
 
     # close the file
     exec 3<&-
