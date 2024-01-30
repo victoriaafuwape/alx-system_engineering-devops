@@ -2,4 +2,4 @@
 # Display a list of currently running processes with hierarchy
 
 # Use the ps command to get process information
-ps aux --forest
+ps -auxf
