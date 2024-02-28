@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-# This script displays the current directory.
-
-for filename in *
-do
-    echo "${filename#*-}"
-    (( i++ ))
-done
